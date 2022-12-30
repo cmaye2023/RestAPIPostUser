@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RestAPIPostUser</string>
+
+
+    <string name="forget_password"><b><u>Forgot Password?</u></b></string>
+    <string name="signup_user"><b><u>SignUp For User</u></b></string>
+
+
+    <string name="login_in_progress">Login in progress!</string>
+    <string name="sync_in_progress">Login in progress!</string>
+
+</resources>

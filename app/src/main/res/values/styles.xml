@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+        <item name="colorPrimary">@color/navy_light</item>
+        <item name="colorPrimaryDark">@color/navy</item>
+        <item name="colorAccent">@color/sea_foam</item>
+
+        <item name = "android:windowActivityTransitions">true</item>
+
+    </style>
+
+    <!--Text Label -->
+    <!-- Hint color and label color in FALSE state -->
+    <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+    <style name = "TextLabel">
+        <item name = "android:textColorHint">@color/colorPrimary</item>
+        <item name = "colorAccent">@color/sea_foam</item>
+        <item name = "colorControlActivated">@color/navy_light</item>
+    </style>
+
+
+    <!--Round Corner Edit Text Outline Box-->
+    <style name="RoundCornerEditTextBox" parent="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name = "boxCornerRadiusTopStart">6dp</item>
+        <item name = "boxCornerRadiusTopEnd">6dp</item>
+        <item name = "boxCornerRadiusBottomStart">6dp</item>
+        <item name = "boxCornerRadiusBottomEnd">6dp</item>
+        <item name = "boxStrokeColor">@color/navy</item>
+        <item name = "android:textColorHint">@color/colorPrimary</item>
+    </style>
+
+    <!-- RoundConorMaterialButton -->
+    <style name="RoundConorMaterialButton" parent="Widget.AppCompat.Button.Colored">
+        <item name="background">@drawable/rounded_shape</item>
+    </style>
+
+
+
+</resources>
