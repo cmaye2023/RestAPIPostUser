@@ -2,6 +2,8 @@
     <string name="app_name">RestAPIPostUser</string>
 
 
+    <string name="username">username</string>
+    <string name="password">password</string>
     <string name="forget_password"><b><u>Forgot Password?</u></b></string>
     <string name="signup_user"><b><u>SignUp For User</u></b></string>
 
@@ -9,4 +11,7 @@
     <string name="login_in_progress">Login in progress!</string>
     <string name="sync_in_progress">Login in progress!</string>
 
+
+    <!-- message -->
+    <string name="activate_message">Before you can login, you must activate your account with the code sent to your email address.</string>
 </resources>
