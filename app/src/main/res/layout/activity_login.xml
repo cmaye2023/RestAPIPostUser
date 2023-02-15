@@ -356,7 +356,7 @@
             app:layout_constraintTop_toBottomOf="@+id/progressBar"
             app:layout_constraintStart_toStartOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="@+id/progressBar"
-            android:text="@string/LoginInProgress"
+            android:text="Login"
             android:textColor="@color/red"
             android:layout_marginTop="5dp"
             android:textSize="15dp"

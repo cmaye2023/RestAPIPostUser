@@ -60,7 +60,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintVertical_bias="0.3"
+        app:layout_constraintVertical_bias="0.6"
         />
 
     <View
@@ -186,6 +186,45 @@
         android:hint="Enter user email"
         android:layout_marginTop="10dp"
         />
+
+    <com.google.android.material.button.MaterialButton
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_view3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="Activate Account"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:backgroundTint="@color/violet"/>
+
+
+
+    <TextView
+        android:id="@+id/tvOTG"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:text="Sign Up"
+        android:textAlignment="center"
+        android:textColor="@color/violet"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_view5" />
+
+    <TextView
+        android:id="@+id/tvPowerBy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="3dp"
+        android:text="Already Activate"
+        android:textAlignment="center"
+        android:textColor="@color/raisin"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/tvOTG"
+        app:layout_constraintEnd_toStartOf="@+id/tvOTG" />
 
 
 

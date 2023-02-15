@@ -5,31 +5,47 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.retrofit.restapipostuser.common.DiffCallBack
-import com.retrofit.restapipostuser.data.PostModel
+import com.retrofit.restapipostuser.data.UserModel
 import com.retrofit.restapipostuser.databinding.AdapterPostModelBinding
 import kotlin.properties.Delegates
 
-class HomeAdapter(private val onItemClick : (View,PostModel,String) -> Unit) : RecyclerView.Adapter<HomeAdapter.ViewHolder>(),DiffCallBack
+class HomeAdapter(private val onItemClick : (View,UserModel,String) -> Unit) : RecyclerView.Adapter<HomeAdapter.ViewHolder>(),DiffCallBack
 {
     private lateinit var binding: AdapterPostModelBinding
 
-    private var postModelList : MutableList<PostModel> by Delegates.observable(mutableListOf()){ _, old, new ->
+    private var userModelList : MutableList<UserModel> by Delegates.observable(mutableListOf()){ _, old, new ->
         compareItem(old,new){o,n -> o.id === n.id}
     }
 
-    inner class ViewHolder(private val binding : AdapterPostModelBinding,onItemClick: (View, PostModel, String) -> Unit) : RecyclerView.ViewHolder(binding.root)
+    inner class ViewHolder(private val binding : AdapterPostModelBinding,onItemClick: (View, UserModel, String) -> Unit) : RecyclerView.ViewHolder(binding.root)
     {
+        lateinit var userModel :UserModel
+        init {
+            with(binding)
+            {
+                userNameCard.setOnClickListener {
+                    onItemClick(userNameCard,userModel,"onClick")
+                }
 
-        fun bindData(postModel: PostModel)
+                userNameCard.setOnLongClickListener{
+                    onItemClick(userNameCard,userModel,"onLongClick")
+                    true
+                }
+                userNameCard.scrollTo(-1,-1)
+
+            }
+        }
+
+        fun bindData(data: UserModel)
         {
             with(binding)
             {
-                postModelTitle.text = postModel.title
-
+                userModel = data
+                userModelName.text = userModel.name
+                userModelEmail.text = userModel.email
+                userModelPhone.text = userModel.phone
             }
-
         }
-
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -38,16 +54,16 @@ class HomeAdapter(private val onItemClick : (View,PostModel,String) -> Unit) : R
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bindData(postModelList[position])
+        holder.bindData(userModelList[position])
     }
 
     override fun getItemCount(): Int {
-        return postModelList.size
+        return userModelList.size
     }
 
-    fun setData(list : MutableList<PostModel>)
+    fun setData(list : MutableList<UserModel>)
     {
-        this.postModelList = list
+        this.userModelList = list
     }
 
 }

@@ -7,6 +7,7 @@ import androidx.activity.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.retrofit.restapipostuser.data.PostModel
+import com.retrofit.restapipostuser.data.UserModel
 import com.retrofit.restapipostuser.databinding.ActivityMainBinding
 import com.retrofit.restapipostuser.viewhelper.HomeAdapter
 import com.retrofit.restapipostuser.viewhelper.HomeViewModel
@@ -30,9 +31,17 @@ class MainActivity : AppCompatActivity() {
         {
             try {
                 adatper = HomeAdapter{view,PostModel,action ->
+                    when(action)
+                    {
+                        "onClick" -> Toast.makeText(this@MainActivity, "onclick", Toast.LENGTH_SHORT).show()
+                        "onLongClick" -> Toast.makeText(this@MainActivity,"onLongClick",Toast.LENGTH_SHORT).show()
+                    }
+
+
 
                 }
                 recyclerRetrofitTest.layoutManager = LinearLayoutManager(this@MainActivity)
+                recyclerRetrofitTest.scrollToPosition(10)
                 recyclerRetrofitTest.adapter = adatper
             }catch (ex : Exception)
             {
@@ -51,8 +60,8 @@ class MainActivity : AppCompatActivity() {
                 viewModel.userModelListLiveData?.observe(this@MainActivity, Observer {
                     if (it != null && it.isNotEmpty())
                     {
-//                        adatper.setData(it as MutableList<PostModel>)
-//                        adatper.notifyDataSetChanged()
+                        adatper.setData(it as MutableList<UserModel>)
+                        adatper.notifyDataSetChanged()
                     }else{
                         Toast.makeText(this@MainActivity, "something error!", Toast.LENGTH_SHORT).show()
                     }
